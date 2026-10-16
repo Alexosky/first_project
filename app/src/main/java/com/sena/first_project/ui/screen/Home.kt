@@ -2,11 +2,11 @@
 package com.sena.first_project.ui.screen
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -15,22 +15,26 @@ import com.sena.first_project.ui.section.SeccionCentral
 import com.sena.first_project.ui.section.SeccionInferior
 import com.sena.first_project.ui.section.SeccionSuperior
 
+private val Fondo = Color(0xFF172033)
+private val Texto = Color(0xFFE4EAF7)
+
 @Composable
 fun Home() {
     Scaffold(
-        containerColor = Color(0xFFF3E7E7)
-    ) { padding ->
+        modifier = Modifier.fillMaxSize(),
+        containerColor = Fondo
+    ) { innerPadding ->
 
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
+                .padding(innerPadding)
                 .padding(8.dp)
         ) {
             Text(
                 text = "Scaffold",
                 fontSize = 13.sp,
-                color = Color(0xFF514747),
+                color = Texto,
                 modifier = Modifier.padding(4.dp)
             )
 
@@ -38,8 +42,8 @@ fun Home() {
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(4.dp),
-                color = Color(0xFFF3E7E7),
-                shape = androidx.compose.foundation.shape.RoundedCornerShape(18.dp)
+                color = Color(0xFF202B40),
+                shape = RoundedCornerShape(18.dp)
             ) {
                 Column(
                     modifier = Modifier
@@ -50,7 +54,7 @@ fun Home() {
                     Text(
                         text = "Surface",
                         fontSize = 13.sp,
-                        color = Color(0xFF514747)
+                        color = Texto
                     )
 
                     SeccionSuperior()

@@ -11,18 +11,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.sena.first_project.ui.composable.Cuadro
 
-private val Rosa = Color(0xFFF28B82)
-private val Turquesa = Color(0xFF80CBC4)
-private val Azul = Color(0xFF42A5F5)
-private val Morado = Color(0xFFAB80DE)
-private val Amarillo = Color(0xFFFFD166)
-private val MoradoFooter = Color(0xFF9575CD)
+private val Naranja = Color(0xFFF4B860)
+private val AzulCentral = Color(0xFF344B67)
+private val Verde = Color(0xFF48C9B0)
+private val Violeta = Color(0xFFB69CFF)
+private val Coral = Color(0xFFFF6B6B)
+private val AzulFooter = Color(0xFF7189D8)
 
 @Composable
 fun SeccionSuperior() {
     Cuadro(
-        nombre = "Box",
-        color = Rosa,
+        nombre = "Box · Column",
+        color = Naranja,
         modifier = Modifier
             .fillMaxWidth()
             .height(90.dp)
@@ -33,8 +33,8 @@ fun SeccionSuperior() {
         ) {
             Text(
                 text = "Header",
-                fontSize = 22.sp,
-                color = Color(0xFF702C2C)
+                fontSize = 23.sp,
+                color = Color(0xFF392B1B)
             )
         }
     }
@@ -43,46 +43,47 @@ fun SeccionSuperior() {
 @Composable
 fun SeccionCentral(modifier: Modifier = Modifier) {
     Cuadro(
-        nombre = "Box",
-        color = Turquesa,
+        nombre = "Box · Column",
+        color = AzulCentral,
         modifier = modifier.fillMaxWidth()
     ) {
-        Row(
+        Column(
             modifier = Modifier.fillMaxSize(),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Box(
+            Row(
                 modifier = Modifier
-                    .size(55.dp)
-                    .padding(2.dp)
+                    .fillMaxWidth()
+                    .padding(horizontal = 12.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Cuadro(
-                    nombre = "",
-                    color = Azul,
-                    modifier = Modifier.fillMaxSize()
+                    nombre = "Box",
+                    color = Coral,
+                    modifier = Modifier.size(62.dp)
+                )
+
+                Cuadro(
+                    nombre = "Box",
+                    color = Verde,
+                    modifier = Modifier.size(62.dp)
+                )
+
+                Cuadro(
+                    nombre = "Box",
+                    color = Violeta,
+                    modifier = Modifier.size(62.dp)
                 )
             }
 
-            Box(
-                modifier = Modifier.size(55.dp)
-            ) {
-                Cuadro(
-                    nombre = "",
-                    color = Morado,
-                    modifier = Modifier.fillMaxSize()
-                )
-            }
-
-            Box(
-                modifier = Modifier.size(55.dp)
-            ) {
-                Cuadro(
-                    nombre = "",
-                    color = Amarillo,
-                    modifier = Modifier.fillMaxSize()
-                )
-            }
+            Text(
+                text = "Row · Arrangement.SpaceEvenly",
+                modifier = Modifier.padding(top = 18.dp),
+                fontSize = 12.sp,
+                color = Color.White
+            )
         }
     }
 }
@@ -90,8 +91,8 @@ fun SeccionCentral(modifier: Modifier = Modifier) {
 @Composable
 fun SeccionInferior() {
     Cuadro(
-        nombre = "Box",
-        color = MoradoFooter,
+        nombre = "Box · Row",
+        color = AzulFooter,
         modifier = Modifier
             .fillMaxWidth()
             .height(90.dp)
@@ -104,13 +105,13 @@ fun SeccionInferior() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "Footer",
+                text = "Fila",
                 fontSize = 18.sp,
                 color = Color.White
             )
 
             Text(
-                text = "Footer",
+                text = "Columna",
                 fontSize = 18.sp,
                 color = Color.White
             )

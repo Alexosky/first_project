@@ -29,18 +29,20 @@ fun Cuadro(
             .background(color)
             .border(
                 2.dp,
-                Color(0xFFB8A6A6),
+                Color(0xFF52617D),
                 RoundedCornerShape(16.dp)
             )
     ) {
-        Text(
-            text = nombre,
-            modifier = Modifier
-                .align(Alignment.TopStart)
-                .padding(8.dp),
-            fontSize = 12.sp,
-            color = Color(0xFF514747)
-        )
+        if (nombre.isNotEmpty()) {
+            Text(
+                text = nombre,
+                modifier = Modifier
+                    .align(Alignment.TopStart)
+                    .padding(8.dp),
+                fontSize = 12.sp,
+                color = Color(0xFF243047)
+            )
+        }
 
         contenido()
     }
